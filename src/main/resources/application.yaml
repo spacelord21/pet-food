@@ -1,0 +1,13 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: spacelord
+    password: 2100
+    url: jdbc:postgresql://localhost:5432/petfood
+  flyway:
+    enabled: true
+    baseline-on-migrate: false
