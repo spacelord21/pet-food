@@ -2,6 +2,7 @@ package ru.spacelord.petfood.domain;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -9,9 +10,10 @@ import java.util.List;
 
 @Data
 @AllArgsConstructor
+@Builder
 @NoArgsConstructor
 @Entity
-@Table(name = "feedbacks")
+@Table(name = "feedback")
 public class FeedBack {
     private static final String SEQ_NAME = "feedback_seq";
 
@@ -25,9 +27,8 @@ public class FeedBack {
     private String disadvantages;
     private String comment;
     private int rating;
-    @OneToMany
-    @JoinTable(name = "products_images",
-            joinColumns = @JoinColumn(name = "product_id"),
-            inverseJoinColumns = @JoinColumn(name = "image_id"))
+    private String createTime;
+    private String userId;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "feedback", fetch = FetchType.LAZY)
     private List<Images> images;
 }

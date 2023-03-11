@@ -1,21 +1,24 @@
 create sequence feedback_seq start with 1 increment by 1;
 create sequence images_seq start with 1 increment by 1;
 create sequence products_seq start with 1 increment by 1;
-create table feedbacks
+create table feedback
 (
     id            bigint  not null,
     comment       varchar(255),
+    create_time   varchar(255),
     dignities     varchar(255),
     disadvantages varchar(255),
     name          varchar(255),
     product_id    bigint,
     rating        integer not null,
+    user_id       varchar(255),
     primary key (id)
 );
 create table images
 (
-    id  bigint not null,
-    url varchar(255),
+    id          bigint not null,
+    url         varchar(255),
+    feedback_id bigint,
     primary key (id)
 );
 create table products
@@ -29,14 +32,5 @@ create table products
     title       varchar(255),
     primary key (id)
 );
-create table products_images
-(
-    product_id bigint not null,
-    image_id   bigint not null
-);
-alter table if exists products_images
-    add constraint UK_b57fyb1vaw15kaehm04iqtpq unique (image_id);
-alter table if exists products_images
-    add constraint FK7sjmma186w08c4llvkc7p141d foreign key (image_id) references images;
-alter table if exists products_images
-    add constraint FKklsuvut5nph2btr3k9pxgc2tj foreign key (product_id) references feedbacks;
+alter table if exists images
+    add constraint FKt4m0ydhtcjpfedy3601t6pnos foreign key (feedback_id) references feedback;

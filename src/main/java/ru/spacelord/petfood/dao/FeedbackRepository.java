@@ -11,6 +11,7 @@ import java.util.List;
 
 public interface FeedbackRepository extends JpaRepository<FeedBack, Long> {
     List<FeedBack> findAllByProductId(Long id);
+    void deleteByUserIdAndProductId(String userId, Long productId);
 
 //    @Transactional
 //    @Modifying
