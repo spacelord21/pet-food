@@ -6,7 +6,7 @@ spring:
   datasource:
     driver-class-name: org.postgresql.Driver
     username: spacelord
-    password: 2100
+    password: queztofamily10
     url: jdbc:postgresql://localhost:5432/petfood
   flyway:
     enabled: true
