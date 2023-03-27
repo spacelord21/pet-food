@@ -27,5 +27,5 @@ public class Product {
     private String shelfLife;
     private String imageUrl;
     private BigDecimal price;
-    private float rating;
+    private int rating;
 }

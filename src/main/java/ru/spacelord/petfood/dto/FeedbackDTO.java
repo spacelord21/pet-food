@@ -1,6 +1,7 @@
 package ru.spacelord.petfood.dto;
 
 import lombok.*;
+import ru.spacelord.petfood.domain.Comment;
 
 import java.util.List;
 
@@ -20,4 +21,5 @@ public class FeedbackDTO {
     private List<String> imagesUrl;
     private String createTime;
     private String userId;
+    private List<Comment> comments;
 }
