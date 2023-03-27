@@ -7,7 +7,7 @@ import ru.spacelord.petfood.dto.AdminDTO;
 import ru.spacelord.petfood.services.FeedbackService;
 
 @RestController
-@CrossOrigin(origins = {"http://localhost:3000", "https://91cb-194-106-194-81.eu.ngrok.io"})
+@CrossOrigin(origins = {"http://localhost:3000", "http://45.80.69.21:3000"})
 @RequestMapping("/api/v1/admin")
 public class AdminController {
 
