@@ -139,3 +139,5 @@ insert into feedback(id, comment, create_time, dignities, disadvantages, name, p
 VALUES (20, 'Щенку папийону 3 месяца очень понравилось это лакомство.', '15 января 2023 г.',
         'Быстрая доставка. Не вонючее', 'нет', 'Жанна К.',
         9, 5, 'someid20');
+
+alter sequence products_seq restart with 21;
