@@ -140,4 +140,4 @@ VALUES (20, 'Щенку папийону 3 месяца очень понрав�
         'Быстрая доставка. Не вонючее', 'нет', 'Жанна К.',
         9, 5, 'someid20');
 
-alter sequence products_seq restart with 21;
+alter sequence feedback_seq restart with 21;
