@@ -57,9 +57,11 @@ public class FeedbackService {
                 .dignities(feedBackDTO.getDignities())
                 .build();
         List<Images> images = new ArrayList<>();
-        feedBackDTO.getImagesUrl().forEach(image -> {
-            images.add(Images.builder().url(image).feedback(feedBack).build());
-        });
+        if(feedBackDTO.getImagesUrl() != null) {
+            feedBackDTO.getImagesUrl().forEach(image -> {
+                images.add(Images.builder().url(image).feedback(feedBack).build());
+            });
+        }
         feedbackRepository.save(feedBack);
         imagesRepository.saveAll(images);
     };
